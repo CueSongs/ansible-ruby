@@ -1,0 +1,14 @@
+---
+
+- name: Check Ruby Version
+  shell: ruby -v
+  ignore_errors: yes
+  register: rubyv
+
+- name: Install requirements for compass gem
+  apt: name={{ item }} state=installed
+  with_items:
+    - gcc
+    - ruby-devel
+    - rubygems
+  when: rubyv|failed

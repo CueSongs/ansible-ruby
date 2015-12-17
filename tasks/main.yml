@@ -9,6 +9,7 @@
   apt: name={{ item }} state=installed
   with_items:
     - gcc
-    - ruby-devel
-    - rubygems
+    - ruby2.0
+    - ruby2.0-dev
+    - rubygems-integration
   when: rubyv|failed

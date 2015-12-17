@@ -5,7 +5,7 @@
   ignore_errors: yes
   register: rubyv
 
-- name: Install requirements for compass gem
+- name: Install requirements for Ruby
   apt: name={{ item }} state=installed
   with_items:
     - gcc
